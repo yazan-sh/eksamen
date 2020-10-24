@@ -108,6 +108,7 @@ public class EksamenSBinTre<T> implements EksamenSBinTr {
             else if (cmp < 0) q.venstre = p;         // venstre barn til q
             else q.høyre = p;                        // høyre barn til q
             //og her så må vi øke endringen
+
         endringer++;
         antall++;                                // én verdi mer i treet
             return true;                             // vellykket innlegging

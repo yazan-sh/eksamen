@@ -16,5 +16,8 @@ Se oblig-tekst for alle krav, og husk spesielt på følgende:
 
 Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, og hver logg-melding beskriver det jeg har gjort av endringer.
 
-* Oppgave 1: Løste ved å implementere ...
+* Oppgave 1: i denne oppgaven så ble vi bedt om å kopiere koden fra 5.2.3a. jeg kopierte den og lagt den inni metoden leggInn. da vi skule gjøre
+endringer for at det referansen forelder q skal få den riktig verdien i hver ny node vi har. da merka jeg at vi får feil ved p = new Node<>(verdi);
+og da ser vi at for å oprette en ny node så må vi ha i tilligg til verdien så må vi ha med q. fordi q er forelder til p som vi fikk oppgitt.
+  og nedresrt så må vi øke endringer.
 * Oppgave 2: ...
