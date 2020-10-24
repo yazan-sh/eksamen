@@ -125,7 +125,14 @@ public class EksamenSBinTre<T> implements EksamenSBinTr {
     }
 
     public int antall(T verdi) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //her så starter vi med å si at hvis verdien er null så returner 0
+        if (verdi.equals(null))
+            return 0;
+        //her så starter forekomsteren fra 0 og skal øke etterhvert
+        int forekomsteren =0;
+            //her sier vi at Node p er lik rota;
+        Node<T> p=rot;
+
     }
 
     public void nullstill() {
