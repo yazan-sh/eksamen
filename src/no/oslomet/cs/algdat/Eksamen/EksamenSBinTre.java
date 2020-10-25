@@ -129,10 +129,22 @@ public class EksamenSBinTre<T> implements EksamenSBinTr {
         if (verdi.equals(null))
             return 0;
         //her så starter forekomsteren fra 0 og skal øke etterhvert
-        int forekomsteren =0;
-            //her sier vi at Node p er lik rota;
-        Node<T> p=rot;
-
+        int forekomsteren = 0;
+        //her sier vi at Node p er lik rota;
+        Node<T> p = rot;
+        //her så sier jeg at p er ikke null
+        while (p != null) {
+            int cmp = comp.compare(verdi, p.verdi);
+            //her så sier jeg når cmp er mindre enn 0 så skal den gå til venstre
+            if (cmp < 0)
+                p = p.venstre;
+            else {
+                if (cmp == 0)
+                    forekomsteren++;
+                p = p.høyre;
+            }
+        }
+        return forekomsteren;
     }
 
     public void nullstill() {
