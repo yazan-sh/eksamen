@@ -22,3 +22,5 @@ og da ser vi at for å oprette en ny node så må vi ha i tilligg til verdien s�
   og nedresrt så må vi øke endringer.
 * Oppgave 2: i denne oppagven så skulle vi lage kode til metoden antall (T verdi) og jeg starta koden ved å si hvis verdien er lik null så skal det returneres 0.
 etter det så antok jeg at int forekomsteren =0; for å telle antall forekmoster i vårt treet. deretter så sa jeg at den Noden<T> p er lik rota. 
+etterhvert så tok jeg en while-løkke hvor jeg sa at p ikke er lik null, deretter så sier jeg at når cmp er midre enn 0 så sett den på venstre
+og når den den er lik 0 så øk forekomsteren og sett den på høyre.
