@@ -44,7 +44,6 @@ public class EksamenSBinTre<T> implements EksamenSBinTr {
     }
 
 
-
     public boolean inneholder(T verdi) {
         if (verdi == null) return false;
 
@@ -84,35 +83,35 @@ public class EksamenSBinTre<T> implements EksamenSBinTr {
 
     public boolean leggInn(T verdi) {
         //throw new UnsupportedOperationException("Ikke kodet ennå!");
-            // skal ligge i class SBinTre
+        // skal ligge i class SBinTre
         //etter at jeg kopirte koden fra5.2.4a og fikk forklart at p starter i roten og q er forelder til p
 
-            Objects.requireNonNull(verdi, "Ulovlig med nullverdier!");
+        Objects.requireNonNull(verdi, "Ulovlig med nullverdier!");
 
-            Node<T> p = rot, q = null;               // p starter i roten
-            int cmp = 0;                             // hjelpevariabel
+        Node<T> p = rot, q = null;               // p starter i roten
+        int cmp = 0;                             // hjelpevariabel
 
-            while (p != null)       // fortsetter til p er ute av treet
-            {
-                q = p;                                 // q er forelder til p
-                cmp = comp.compare(verdi,p.verdi);     // bruker komparatoren
-                p = cmp < 0 ? p.venstre : p.høyre;     // flytter p
-            }
+        while (p != null)       // fortsetter til p er ute av treet
+        {
+            q = p;                                 // q er forelder til p
+            cmp = comp.compare(verdi, p.verdi);     // bruker komparatoren
+            p = cmp < 0 ? p.venstre : p.høyre;     // flytter p
+        }
 
-            // p er nå null, dvs. ute av treet, q er den siste vi passerte
-            // her når vi oppretter en ny node med verdi så får vi feil melding
-            //men grunnen til at q skal være er att q er den forelder til p
-            p = new Node<>(verdi,q);                   // oppretter en ny node
+        // p er nå null, dvs. ute av treet, q er den siste vi passerte
+        // her når vi oppretter en ny node med verdi så får vi feil melding
+        //men grunnen til at q skal være er att q er den forelder til p
+        p = new Node<>(verdi, q);                   // oppretter en ny node
 
-            if (q == null) rot = p;                  // p blir rotnode
-            else if (cmp < 0) q.venstre = p;         // venstre barn til q
-            else q.høyre = p;                        // høyre barn til q
-            //og her så må vi øke endringen
+        if (q == null) rot = p;                  // p blir rotnode
+        else if (cmp < 0) q.venstre = p;         // venstre barn til q
+        else q.høyre = p;                        // høyre barn til q
+        //og her så må vi øke endringen
 
         endringer++;
         antall++;                                // én verdi mer i treet
-            return true;                             // vellykket innlegging
-        }
+        return true;                             // vellykket innlegging
+    }
 
 
     public boolean fjern(T verdi) {
@@ -153,15 +152,15 @@ public class EksamenSBinTre<T> implements EksamenSBinTr {
 
     private static <T> Node<T> førstePostorden(Node<T> p) {
         //her så mener vi at p er null
-        if (p==null)
-           p=null;
+        if (p == null)
+            p = null;
         //på nesten samme måten i eksemplet 5.1.7 h bruker vi whil-løkke for å sjekke
-        while (true){
-            if (p.venstre !=null)
-                p=p.venstre;
+        while (true) {
+            if (p.venstre != null)
+                p = p.venstre;
 
-            else if (p.høyre !=null)
-                p=p.høyre;
+            else if (p.høyre != null)
+                p = p.høyre;
 
             else return p;
         }
@@ -169,9 +168,27 @@ public class EksamenSBinTre<T> implements EksamenSBinTr {
     }
 
     private static <T> Node<T> nestePostorden(Node<T> p) {
-       throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //her så sier vi at p er lik null
+        if (p == null)
+            throw new NoSuchElementException("treet er tom");
+
+            //her så sjekker jeg om at p ikke har en forelder
+        else if (p.forelder == null)
+            p = null;
+            //her er alle tilfellene
+
+        else if (p == p.forelder.høyre)
+            p = p.forelder;
+
+        else if (p == p.forelder.venstre)
+
+            p = p.forelder;
+
+        else p = førstePostorden(p.forelder.høyre);
 
     }
+        return p;
+}
 
     public void postorden(Oppgave<? super T> oppgave) {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
