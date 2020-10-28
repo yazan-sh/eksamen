@@ -152,11 +152,25 @@ public class EksamenSBinTre<T> implements EksamenSBinTr {
     }
 
     private static <T> Node<T> førstePostorden(Node<T> p) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //her så mener vi at p er null
+        if (p==null)
+           p=null;
+        //på nesten samme måten i eksemplet 5.1.7 h bruker vi whil-løkke for å sjekke
+        while (true){
+            if (p.venstre !=null)
+                p=p.venstre;
+
+            else if (p.høyre !=null)
+                p=p.høyre;
+
+            else return p;
+        }
+
     }
 
     private static <T> Node<T> nestePostorden(Node<T> p) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+       throw new UnsupportedOperationException("Ikke kodet ennå!");
+
     }
 
     public void postorden(Oppgave<? super T> oppgave) {
