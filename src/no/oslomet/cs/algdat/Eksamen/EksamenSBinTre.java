@@ -180,7 +180,8 @@ public class EksamenSBinTre<T> implements EksamenSBinTr {
         else if (p == p.forelder.høyre)
             p = p.forelder;
 
-        else if (p == p.forelder.venstre)
+        else if (p == p.forelder.venstre){
+            if (p.forelder.høyre==null)
 
             p = p.forelder;
 
