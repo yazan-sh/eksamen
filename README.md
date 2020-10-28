@@ -33,5 +33,9 @@ på den andre metode  private static <T> Node<T> nestePostorden(Node<T> p).  fø
 sånn at den skal være den siste noden i postorden. deretter sjekker jeg om p er høyre barn til sin forlder.så forelderen er den neste noden. 
  så sjekker om p er venstre barn til sin forlder, og da får vi to tilfeller:
  når p er lik forelder.venstre så vil p er enebarn, eller hvis den er sim forelder.høyre, da får vi at p ikke er enebarn.
- hvis den er enebarn så får vi vite at metoden nestpostorden er den første post orden. 
+ hvis den er enebarn så får vi vite at metoden nestpostorden er den første post orden.
+ 
+ *Oppgave 4: først så sjekker jeg om treet er tomt. og som ble bedt i oppgave så har jeg ikke brukt noen hjelpe variabler stack eller kø.
+ og på samme måete som eksemplet 5.1.7c så setter jeg en while-løkke hvor vi sier når p ikke er null så utførOppgave. og på slutten så vil denne 
+ (p = nestePostorden(p);) gi den neste i postOrden
  
