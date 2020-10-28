@@ -29,5 +29,9 @@ og når den den er lik 0 så øk forekomsteren og sett den på høyre.
 *oppgave 3: det første jeg gjør er at jeg sjekker om roten er lik null. og når vi leser på 5.1.7 så finner vi at eksempel 5.1.7 h kan vi låne og
 sette while-løkken og da har vi to tilfeller hvor p.venstre ikke er null så vil p node være lik p.venstre. og det andre tilfellet er hvis p.høyre er
 ikke lik null så vil p node være lik p.høyre. og på slutten så else return p. 
-  
+på den andre metode  private static <T> Node<T> nestePostorden(Node<T> p).  først så sjekker vi at p er lik null. og etterhvert så sjekker vi om p ikke har forelder
+sånn at den skal være den siste noden i postorden. deretter sjekker jeg om p er høyre barn til sin forlder.så forelderen er den neste noden. 
+ så sjekker om p er venstre barn til sin forlder, og da får vi to tilfeller:
+ når p er lik forelder.venstre så vil p er enebarn, eller hvis den er sim forelder.høyre, da får vi at p ikke er enebarn.
+ hvis den er enebarn så får vi vite at metoden nestpostorden er den første post orden. 
  
