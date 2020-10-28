@@ -192,7 +192,19 @@ public class EksamenSBinTre<T> implements EksamenSBinTr {
 }
 
     public void postorden(Oppgave<? super T> oppgave) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+      //  throw new UnsupportedOperationException("Ikke kodet ennå!");
+        if (tom()) return;    // Treet er tomt
+
+        //den første i postorden
+        Node<T> p = førstePostorden(rot);
+
+            //på samme måte som eksemplet 5.1.7c
+        while (p != null) {
+
+            oppgave.utførOppgave(p.verdi);
+
+            p = nestePostorden(p);
+        }
     }
 
     public void postordenRecursive(Oppgave<? super T> oppgave) {
