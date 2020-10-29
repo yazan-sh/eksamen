@@ -220,11 +220,36 @@ public class EksamenSBinTre<T> implements EksamenSBinTr {
     }
 
     public ArrayList<T> serialize() {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        // throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //kildenkoden er vidioen uke 09 level order:)
+        //her så lager vi arrayet vårt
+         ArrayList<T> array = new ArrayList<>();
+        ArrayDeque<Node<T>> queue = new ArrayDeque<Node<T>>();
+
+        //legg til rot-noden
+        queue.addLast(rot);
+
+        while (!queue.isEmpty()) {
+            //1- ta ut først fra køen
+            Node<T> current = queue.removeFirst();
+
+            //2- legg til current sine  to barn til køen
+            if (current.venstre != null) {
+                queue.addLast(current.venstre);
+            }
+            if (current.høyre != null) {
+                queue.addLast(current.høyre);
+            }
+            //3- her så skal vi adde til array current og verdien. og return array
+            array.add(current.verdi);
+
+        }
+        return array;
     }
 
     static <K> EksamenSBinTre<K> deserialize(ArrayList<K> data, Comparator<? super K> c) {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
+
     }
 
 
