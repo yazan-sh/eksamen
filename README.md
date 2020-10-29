@@ -39,4 +39,9 @@ sånn at den skal være den siste noden i postorden. deretter sjekker jeg om p e
  og på samme måete som eksemplet 5.1.7c så setter jeg en while-løkke hvor vi sier når p ikke er null så utførOppgave. og på slutten så vil denne 
  (p = nestePostorden(p);) gi den neste i postOrden. iden andre metoden så kopirte jeg koden fra oppgave 7 i avsnitt 5.1.7. i denne pirvate
   hjelpe metoden som implimenterte rekurasjonen, da la vi til at den er enten til venstre barn eller til høyre barn
+  
+  *Oppgave 5: den ArrayList<T> serialize() hjelpe metoden den skulle enkelt lagre til fil siden er vanskelig å lagre ett binaærttre, og skal isteden
+  for lagre i form av array. da startet jeg med å lage mitt array. deretter så lager vi vår kø. deretter så legger vi til rot-noden ved addLast.
+  og så en while-løkke hvor jeg sier  så lenge ikke kø is.Empty. og da legger vi current sine to barn til køen. og siden vi ikke skal skrive ut noe
+  så må vi legge til vårt array current og verdien. og da return array. (kildekoden er vidioen i uke09 level order).
  
