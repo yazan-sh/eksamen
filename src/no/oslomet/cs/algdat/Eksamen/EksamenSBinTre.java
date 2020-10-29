@@ -193,7 +193,7 @@ public class EksamenSBinTre<T> implements EksamenSBinTr {
 
     public void postorden(Oppgave<? super T> oppgave) {
       //  throw new UnsupportedOperationException("Ikke kodet ennå!");
-        if (tom()) return;    // Treet er tomt
+        if (tom()) return;    // sjekker om Treet er tomt
 
         //den første i postorden
         Node<T> p = førstePostorden(rot);
@@ -212,7 +212,11 @@ public class EksamenSBinTre<T> implements EksamenSBinTr {
     }
 
     private void postordenRecursive(Node<T> p, Oppgave<? super T> oppgave) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //throw new UnsupportedOperationException("Ikke kodet ennå!");
+        // jeg kopirte koden fra ukesoppgave avsnitt 5.1.7 oppgave 7
+        if (p.venstre != null) postordenRecursive(p.venstre, oppgave); //til venstre barn
+        if (p.høyre != null) postordenRecursive(p.høyre, oppgave); //til høyre barn
+        oppgave.utførOppgave(p.verdi); // denne her skal utføre oppgaven
     }
 
     public ArrayList<T> serialize() {

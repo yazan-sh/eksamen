@@ -37,5 +37,6 @@ sånn at den skal være den siste noden i postorden. deretter sjekker jeg om p e
  
  *Oppgave 4: først så sjekker jeg om treet er tomt. og som ble bedt i oppgave så har jeg ikke brukt noen hjelpe variabler stack eller kø.
  og på samme måete som eksemplet 5.1.7c så setter jeg en while-løkke hvor vi sier når p ikke er null så utførOppgave. og på slutten så vil denne 
- (p = nestePostorden(p);) gi den neste i postOrden
+ (p = nestePostorden(p);) gi den neste i postOrden. iden andre metoden så kopirte jeg koden fra oppgave 7 i avsnitt 5.1.7. i denne pirvate
+  hjelpe metoden som implimenterte rekurasjonen, da la vi til at den er enten til venstre barn eller til høyre barn
  
