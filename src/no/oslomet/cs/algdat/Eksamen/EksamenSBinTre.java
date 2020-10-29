@@ -248,7 +248,18 @@ public class EksamenSBinTre<T> implements EksamenSBinTr {
     }
 
     static <K> EksamenSBinTre<K> deserialize(ArrayList<K> data, Comparator<? super K> c) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+       // throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //her så lager jeg ett objekt som jeg kaller treet
+        EksamenSBinTre<K> treet = new EksamenSBinTre<K>(c);
+
+
+        for (int i=0; i<data.size();i++){
+
+            treet.leggInn(data.get(i));
+        }
+
+        return treet;
+
 
     }
 
