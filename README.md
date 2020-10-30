@@ -43,5 +43,7 @@ sånn at den skal være den siste noden i postorden. deretter sjekker jeg om p e
   *Oppgave 5: den ArrayList<T> serialize() hjelpe metoden den skulle enkelt lagre til fil siden er vanskelig å lagre ett binaærttre, og skal isteden
   for lagre i form av array. da startet jeg med å lage mitt array. deretter så lager vi vår kø. deretter så legger vi til rot-noden ved addLast.
   og så en while-løkke hvor jeg sier  så lenge ikke kø is.Empty. og da legger vi current sine to barn til køen. og siden vi ikke skal skrive ut noe
-  så må vi legge til vårt array current og verdien. og da return array. (kildekoden er vidioen i uke09 level order).
+  så må vi legge til vårt array current og verdien. og da return array. (kildekoden er vidioen i uke09 level order). 
+  i  den deserialize så skulle den ta inn arrayet og skal de legges inn alle verdiene. og da starter vi med å lage treet som skal ta inn arrayet
+  og da kaller vi leggInn metoden som skal sette inn alle verdiene. og da returne treet.
  
