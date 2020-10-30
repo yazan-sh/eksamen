@@ -46,4 +46,9 @@ sånn at den skal være den siste noden i postorden. deretter sjekker jeg om p e
   så må vi legge til vårt array current og verdien. og da return array. (kildekoden er vidioen i uke09 level order). 
   i  den deserialize så skulle den ta inn arrayet og skal de legges inn alle verdiene. og da starter vi med å lage treet som skal ta inn arrayet
   og da kaller vi leggInn metoden som skal sette inn alle verdiene. og da returne treet.
+  
+  *Oppgave 6: den er den vanskeligste oppgaven syns jeg. så skulle vi først lage fjern metoden , og siden vi ble bedt om å kopiere koden
+   fra 5.2.8d da vi måtte gløre endringer for at pekeren forelder skal få riktig verdi. da sier jeg når  b ikke er lik null så skal den b.forelder være lik q
+   og  da sier jeg etterhvert at når den høyre barn r ikke er null, så skal r.høyre.forelder være lik s. og på slutten så vi telle  endringene 
+   ved å øke endringer.  
  
