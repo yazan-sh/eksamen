@@ -115,40 +115,103 @@ public class EksamenSBinTre<T> implements EksamenSBinTr {
 
 
     public boolean fjern(T verdi) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+       // throw new UnsupportedOperationException("Ikke kodet ennå!");
+        //siden vi ble bedt om å kopiere koden fra 5.2.8d
+        //da vi måtte gløre endringer for at pekeren forelder
+        //skal få riktig verdi
+        if (verdi == null) return false;
 
-    }
+        Node<T> p = rot, q = null;
 
-    public int fjernAlle(T verdi) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
-    }
-
-    public int antall(T verdi) {
-        //her så starter vi med å si at hvis verdien er null så returner 0
-        if (verdi.equals(null))
-            return 0;
-        //her så starter forekomsteren fra 0 og skal øke etterhvert
-        int forekomsteren = 0;
-        //her sier vi at Node p er lik rota;
-        Node<T> p = rot;
-        //her så sier jeg at p er ikke null
-        while (p != null) {
-            int cmp = comp.compare(verdi, p.verdi);
-            //her så sier jeg når cmp er mindre enn 0 så skal den gå til venstre
-            if (cmp < 0)
-                p = p.venstre;
-            else {
-                if (cmp == 0)
-                    forekomsteren++;
-                p = p.høyre;
-            }
+        while (p != null)
+        {
+            int cmp = comp.compare(verdi,p.verdi);
+            if (cmp < 0) { q = p; p = p.venstre; }
+            else if (cmp > 0) { q = p; p = p.høyre; }
+            else break;
         }
-        return forekomsteren;
+        if (p == null) return false;
+
+        if (p.venstre == null || p.høyre == null)
+        {
+            Node<T> b = p.venstre != null ? p.venstre : p.høyre;
+            //her så sier vi når b ikke er null så er b forelder er lik q
+            if (b != null) b.forelder = q;
+
+            if (p == rot) rot = b;
+            else if (p == q.venstre) q.venstre = b;
+            else q.høyre = b;
+        }
+        else
+        {
+            Node<T> s = p, r = p.høyre;
+            while (r.venstre != null)
+            {
+                s = r;
+                r = r.venstre;
+            }
+
+            p.verdi = r.verdi;
+
+            //her så sier vi når r høyre ikke er lik null
+            //så skal forelder være lik s
+            if (r.høyre != null) r.høyre.forelder = s;
+
+            if (s != p) s.venstre = r.høyre;
+            else s.høyre = r.høyre;
+        }
+        //og på slutten så må øke endringene
+        antall--;
+        endringer++;
+
+        return true;
+
     }
+
+        public int fjernAlle (T verdi){
+            throw new UnsupportedOperationException("Ikke kodet ennå!");
+
+
+                }
+
+
+
+
+
+        public int antall (T verdi){
+            //her så starter vi med å si at hvis verdien er null så returner 0
+            if (verdi.equals(null))
+                return 0;
+            //her så starter forekomsteren fra 0 og skal øke etterhvert
+            int forekomsteren = 0;
+            //her sier vi at Node p er lik rota;
+            Node<T> p = rot;
+            //her så sier jeg at p er ikke null
+            while (p != null) {
+                int cmp = comp.compare(verdi, p.verdi);
+                //her så sier jeg når cmp er mindre enn 0 så skal den gå til venstre
+                if (cmp < 0)
+                    p = p.venstre;
+                else {
+                    if (cmp == 0)
+                        forekomsteren++;
+                    p = p.høyre;
+                }
+            }
+            return forekomsteren;
+        }
 
     public void nullstill() {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
-    }
+
+        }
+
+
+
+
+
+
+
 
     private static <T> Node<T> førstePostorden(Node<T> p) {
         //her så mener vi at p er null
