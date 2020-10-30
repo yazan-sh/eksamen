@@ -212,10 +212,35 @@ public class EksamenSBinTre<T> implements EksamenSBinTr {
         }
 
     public void nullstill() {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+       // throw new UnsupportedOperationException("Ikke kodet ennå!");
+        if(!tom()) {
+            nullstill(rot);
+            rot = null;
 
         }
+        }
+    //her så lager vi hjelpe metoden for oppgaven (6)
+    private void nullstill (Node<T> p) {
 
+        //her starter vi med venstre og nullerer den
+        if (p.venstre != null) {
+            nullstill(p.venstre);
+            p.venstre = null;
+        }
+        //her starter vi med høyre og nullerer den
+        if (p.høyre != null) {
+            nullstill(p.høyre);
+            p.høyre = null;
+        }
+       /* p.venstre = null;
+        p.høyre = null;
+        p.verdi = null;
+        p.forelder = null;*/
+       //her så minker vi antall med en hver gang det bllir nullet
+        antall--;
+
+
+    }
 
 
 
