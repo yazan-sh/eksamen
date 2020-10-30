@@ -169,10 +169,20 @@ public class EksamenSBinTre<T> implements EksamenSBinTr {
     }
 
         public int fjernAlle (T verdi){
-            throw new UnsupportedOperationException("Ikke kodet ennå!");
+          //  throw new UnsupportedOperationException("Ikke kodet ennå!");
+            //NB: DENNE METODEN KAN KODES PÅ FLERE MÅTER, VI KAN OGSÅ KODE VED HJELPE AV DUPLIKATER PÅ SAMME MÅTE.
+            //MEN JEG SYNS AT DENNE METODEN ER ENKELST:)
 
+            //starter med å definere det som skal bli fjernet
+            int antallFjernetForekomster = 0;
+            //her så sier vi at når vi fjerner verdi så
+            while (fjern(verdi))
+            //så skal den starter å teller hvor mange forekomster ble fjerne
+                antallFjernetForekomster++;
 
-                }
+            return antallFjernetForekomster;
+
+    }
 
 
 
