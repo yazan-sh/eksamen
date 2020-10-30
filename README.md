@@ -55,5 +55,7 @@ sånn at den skal være den siste noden i postorden. deretter sjekker jeg om p e
    i den andre metoden fjernAlt så var den ikke så avansert siden vi skulle bare fjerne alle forekomster av verdiene i treet. da jeg definert 
    antallFjernetForekomster og fjernet verdien ved hjelp av while-løkke, og satt at antallFjernetForekomster. og til slutt så return antallFjernetForekomster.
    
-   
+   i den tredje metoden nullstill, så skulle vi nullere pekere og nodeverdienei treet.og da satt jeg når den ikke er tom så skal roten nullstilles
+   og da lagde jeg en hjelpe metode, og nullerte alle pekere og node verdiene, og startet med p.venstre og nullerer den. etterhvert så nullerte 
+   p.høyre. og på slutten så minker vi antall--.
  
